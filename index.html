@@ -9,70 +9,68 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            justify-content: flex-start; 
+            justify-content: center; 
             min-height: 100vh; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #f4f7f6; 
+            background-color: #ffffff; 
             margin: 0; 
             padding: 20px;
         }
         .container { max-width: 400px; width: 100%; text-align: center; }
-        .logo { width: 110px; height: 110px; border-radius: 50%; margin-top: 20px; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); background-color: #fff; object-fit: cover; }
-        h1 { font-size: 22px; color: #333; margin-bottom: 8px; }
-        p { font-size: 14px; color: #666; margin-bottom: 30px; line-height: 1.6; padding: 0 10px; }
         
-        .link-card {
-            display: flex;
+        h1 { font-size: 28px; color: #1d1d1f; margin-bottom: 12px; font-weight: 600; }
+        p { font-size: 16px; color: #86868b; margin-bottom: 40px; line-height: 1.5; }
+        
+        .btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #ffffff;
-            color: #333;
+            background: #f5d142; /* اللون الأصفر المماثل للصورة */
+            color: #000000;
             text-decoration: none;
-            padding: 16px;
-            margin-bottom: 14px;
-            border-radius: 15px;
+            padding: 18px 35px;
+            margin-bottom: 20px;
+            border-radius: 40px; /* زوايا منحنية بالكامل */
             font-weight: 600;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-            transition: all 0.2s ease;
-            border: 1px solid #eaeaea;
-        }
-        .link-card:active { transform: scale(0.97); background: #fdfdfd; }
-        
-        /* زر الواقع المعزز المميز */
-        .ar-btn { 
-            background: #FFD700; 
-            color: #000; 
-            border: none;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
             font-size: 18px;
+            box-shadow: 0 10px 20px rgba(245, 209, 66, 0.2);
+            transition: all 0.3s ease;
+            width: 80%;
+        }
+        .btn:active { transform: scale(0.96); }
+
+        /* زر المتجر والواتساب بتصميم أنيق وبسيط */
+        .secondary-btn {
+            background: #f5f5f7;
+            color: #1d1d1f;
+            box-shadow: none;
+            font-size: 16px;
         }
 
-        .footer { margin-top: 40px; padding: 20px; font-size: 12px; color: #bbb; }
+        .footer { margin-top: 50px; font-size: 13px; color: #aeaeb2; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="logo.jpg" alt="Helium Eid" class="logo" onerror="this.style.display='none'">
-        
-        <h1>هيليوم العيد</h1>
-        <p>خلف كل بالون قصة فرح.. نسجنا لكم من خيوط الذهب حروفاً تُعلن الفرح وتزين لقاءاتكم.</p>
+        <h1>بالونات العيد العملاقة 🎈</h1>
+        <p>اضغط على الزر وشوفها في صالتك!</p>
 
-        <a rel="ar" href="HeliumEid.usdz" class="link-card ar-btn">
-             🪄 معاينة بالونات العيد (AR)
+        <a rel="ar" href="HeliumEid.usdz" class="btn">
+             فتح المعاينة في منزلك 🤳
         </a>
 
-        <a href="https://crlkll.zid.store/" class="link-card">
+        <a href="https://crlkll.zid.store/" class="btn secondary-btn">
             🛒 اطلب من المتجر
         </a>
 
-        <a href="https://wa.me/966577493584" class="link-card">
-            💬 الدعم الفني والاستفسارات
+        <a href="https://wa.me/966577493584" class="btn secondary-btn">
+            💬 استفسارات الواتساب
         </a>
     </div>
 
     <div class="footer">
-        © جميع الحقوق محفوظة لمتجر هيليوم العيد
+        © متجر هيليوم العيد
     </div>
 
 </body>
