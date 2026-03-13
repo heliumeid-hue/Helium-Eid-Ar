@@ -3,41 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معاينة بالونات العيد</title>
+    <title>هيليوم العيد | Helium Eid</title>
     <style>
         body { 
             display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
             flex-direction: column; 
-            font-family: sans-serif; 
-            background-color: #f9f9f9; 
-            margin: 0;
-            text-align: center;
+            align-items: center; 
+            justify-content: flex-start; 
+            min-height: 100vh; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #f4f7f6; 
+            margin: 0; 
+            padding: 20px;
         }
-        h1 { color: #333; margin-bottom: 10px; }
-        p { color: #666; margin-bottom: 30px; font-size: 18px; }
-        .ar-button { 
-            padding: 20px 40px; 
+        .container { max-width: 400px; width: 100%; text-align: center; }
+        .logo { width: 110px; height: 110px; border-radius: 50%; margin-top: 20px; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); background-color: #fff; object-fit: cover; }
+        h1 { font-size: 22px; color: #333; margin-bottom: 8px; }
+        p { font-size: 14px; color: #666; margin-bottom: 30px; line-height: 1.6; padding: 0 10px; }
+        
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #333;
+            text-decoration: none;
+            padding: 16px;
+            margin-bottom: 14px;
+            border-radius: 15px;
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
+            border: 1px solid #eaeaea;
+        }
+        .link-card:active { transform: scale(0.97); background: #fdfdfd; }
+        
+        /* زر الواقع المعزز المميز */
+        .ar-btn { 
             background: #FFD700; 
-            border-radius: 50px; 
-            text-decoration: none; 
             color: #000; 
-            font-weight: bold; 
-            font-size: 20px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
-            transition: 0.3s; 
+            border: none;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            font-size: 18px;
         }
-        .ar-button:active { transform: scale(0.95); }
+
+        .footer { margin-top: 40px; padding: 20px; font-size: 12px; color: #bbb; }
     </style>
 </head>
 <body>
-    <h1>بالونات العيد العملاقة 🎈</h1>
-    <p>اضغط على الزر وشوفها في صالتك!</p>
-    
-    <a rel="ar" href="HeliumEid.usdz" class="ar-button">
-        فتح المعاينة في منزلك 🤳
-    </a>
+
+    <div class="container">
+        <img src="logo.jpg" alt="Helium Eid" class="logo" onerror="this.style.display='none'">
+        
+        <h1>هيليوم العيد</h1>
+        <p>خلف كل بالون قصة فرح.. نسجنا لكم من خيوط الذهب حروفاً تُعلن الفرح وتزين لقاءاتكم.</p>
+
+        <a rel="ar" href="HeliumEid.usdz" class="link-card ar-btn">
+             🪄 معاينة بالونات العيد (AR)
+        </a>
+
+        <a href="https://crlkll.zid.store/" class="link-card">
+            🛒 اطلب من المتجر
+        </a>
+
+        <a href="https://wa.me/966577493584" class="link-card">
+            💬 الدعم الفني والاستفسارات
+        </a>
+    </div>
+
+    <div class="footer">
+        © جميع الحقوق محفوظة لمتجر هيليوم العيد
+    </div>
+
 </body>
 </html>
