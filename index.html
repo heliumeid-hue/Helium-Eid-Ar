@@ -6,78 +6,179 @@
     <title>هيليوم العيد | Helium Eid</title>
     <style>
         body { 
-            display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            min-height: 100vh; font-family: -apple-system, sans-serif; 
-            background-color: #ffffff; margin: 0; padding: 20px;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #ffffff; 
+            margin: 0; 
+            padding: 20px;
         }
         .container { max-width: 500px; width: 100%; text-align: center; }
         
-        /* زر المعاينة الأساسي - تم تغيير لونه لتمييزه */
-        .btn-ar {
-            display: inline-flex; align-items: center; justify-content: center;
-            background: #000; color: #fff; text-decoration: none;
-            padding: 20px 45px; margin-bottom: 20px; border-radius: 40px; 
-            font-weight: bold; font-size: 18px; width: 85%; border: none; cursor: pointer;
+        .brand-logo { 
+            width: 120px; height: 120px; border-radius: 50%; 
+            margin-bottom: 20px; object-fit: contain; 
+            animation: float 3s ease-in-out infinite;
         }
 
-        /* نافذة التنبيه - ستكون ظاهرة لضمان رؤيتها */
-        #tt-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #fff; z-index: 9999; padding: 30px; box-sizing: border-box;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
-        .instruction-card {
-            border: 2px solid #f5d142; padding: 20px; border-radius: 20px; text-align: center;
+        
+        h1 { font-size: 28px; color: #1d1d1f; margin-bottom: 15px; font-weight: 600; }
+        
+        .brand-story { font-size: 15px; color: #666; margin-bottom: 25px; line-height: 1.8; padding: 0 25px; }
+
+        /* صندوق الإرشادات */
+        .instruction-box {
+            background: #fff9e6;
+            border: 1px dashed #f5d142;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #856404;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
-        .arrow { font-size: 50px; text-align: left; display: block; animation: moveUp 1s infinite; }
-        @keyframes moveUp { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        /* الأزرار الأساسية للهوية */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5d142; 
+            color: #000000;
+            text-decoration: none;
+            padding: 18px 45px;
+            margin-bottom: 15px;
+            border-radius: 40px; 
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 10px 20px rgba(245, 209, 66, 0.2);
+            transition: all 0.3s ease;
+            width: 85%;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:active { transform: scale(0.96); }
+
+        .secondary-btn { background: #f5f5f7; color: #1d1d1f; box-shadow: none; font-size: 16px; }
+
+        .footer { margin-top: 50px; font-size: 12px; color: #aeaeb2; }
+
+        /* طبقة تنبيه تيك توك المخصصة بنفس الهوية */
+        #tiktok-helper {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 10000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .tiktok-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 2px solid #f5d142;
+            max-width: 350px;
+            position: relative;
+        }
+
+        .tiktok-arrow {
+            position: absolute;
+            top: -60px;
+            right: 0px;
+            font-size: 50px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
     </style>
 </head>
 <body>
 
-    <div id="tt-overlay">
-        <div class="arrow">↗️</div>
-        <div class="instruction-card">
-            <h2>خطوة واحدة متبقية! 🎈</h2>
-            <p>لفتح الكاميرا والمعاينة، يرجى اتباع الآتي:</p>
-            <div style="text-align: right; background: #f5f5f7; padding: 15px; border-radius: 10px;">
-                1. اضغط على <b>النقاط الثلاث (•••)</b> بالأعلى.<br>
-                2. اختر <b>فتح في المتصفح</b> أو <b>Open in Safari</b>.
+    <div id="tiktok-helper">
+        <div class="tiktok-card">
+            <div class="tiktok-arrow">↗️</div>
+            <h2 style="margin-top:0; color:#1d1d1f;">معاينة البالونات 🎈</h2>
+            <p style="font-size: 15px; color: #555;">لفتح الكاميرا، نحتاج منك فتح الصفحة في متصفح خارجي:</p>
+            <div style="text-align: right; background: #fff9e6; padding: 15px; border-radius: 15px; font-size: 14px; color: #856404; line-height: 1.6;">
+                1️⃣ اضغط على <b>النقاط الثلاث (•••)</b> بالأعلى.<br>
+                2️⃣ اختر <b>فتح في المتصفح</b> أو <b>Safari</b>.
             </div>
-            <button onclick="document.getElementById('tt-overlay').style.display='none'" style="margin-top: 20px; background: none; border: 1px solid #ccc; padding: 10px; border-radius: 10px;">أنا في المتصفح بالفعل</button>
+            <button onclick="document.getElementById('tiktok-helper').style.display='none'" 
+                    style="margin-top: 20px; background: none; border: none; color: #999; text-decoration: underline; cursor: pointer; font-size: 13px;">
+                أنا في المتصفح بالفعل
+            </button>
         </div>
     </div>
 
     <div class="container">
-        <img src="logo.png" width="120" style="margin-bottom:20px;">
-        <h1>بالونات العيد 🎈</h1>
+        <img src="logo.png" alt="هيليوم العيد" class="brand-logo" onerror="this.style.display='none'">
         
-        <a id="ar-link" rel="ar" href="HeliumEid.usdz" class="btn-ar">
-             اضغط هنا للمعاينة 🤳
+        <h1>بالونات العيد العملاقة 🎈</h1>
+        
+        <div class="brand-story">
+            خلف كل بالون قصة فرح، ومع كل خيط هيليوم أمنية عيد. في <b>هيليوم عيد</b> نسجنا لكم من خيوط الذهب حروفاً تُعلن الفرح وتزين لقاءات العيد.
+        </div>
+
+        <div class="instruction-box">
+            <span>💡 بعد الضغط على الزر، اضغط على <b>أيقونة المكعب</b> 🧊 في الأعلى لتشغيل الكاميرا</span>
+        </div>
+
+        <a id="ar-btn" rel="ar" href="HeliumEid.usdz" class="btn">
+            فتح المعاينة في منزلك 🤳
         </a>
 
-        <a href="https://crlkll.zid.store/" style="display:block; margin-bottom:10px; color:#666;">اطلب من المتجر 🛒</a>
+        <a href="https://crlkll.zid.store/" class="btn secondary-btn">
+            اطلب من المتجر 🛒
+        </a>
+
+        <a href="https://wa.me/966577493584" class="btn secondary-btn">
+            الدعم الفني والاستفسارات 💬
+        </a>
+    </div>
+
+    <div class="footer">
+        © جميع الحقوق محفوظة لمتجر هيليوم العيد
     </div>
 
     <script>
-        // فحص المتصفح فوراً وبدون انتظار
-        (function() {
+        // دالة لفحص إذا كان المستخدم داخل تيك توك أو انستقرام
+        function isSocialBrowser() {
             var ua = navigator.userAgent || navigator.vendor || window.opera;
-            var isTikTok = (ua.indexOf("TikTok") > -1) || (ua.indexOf("Instagram") > -1);
-            
-            if (isTikTok) {
-                // إظهار التنبيه فوراً
-                document.getElementById('tt-overlay').style.display = 'block';
-            }
-        })();
+            return (ua.indexOf("TikTok") > -1) || (ua.indexOf("Instagram") > -1) || (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+        }
 
-        // منع المتصفح من فتح الملف كنص إذا ضغط المستخدم وهو لا يزال داخل تيك توك
-        document.getElementById('ar-link').addEventListener('click', function(e) {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            if ((ua.indexOf("TikTok") > -1)) {
-                e.preventDefault(); // منع فتح الرابط (الذي يظهر ككود)
-                document.getElementById('tt-overlay').style.display = 'block'; // إظهار التنبيه بدلاً منه
+        // إظهار التنبيه تلقائياً عند الدخول من تيك توك
+        if (isSocialBrowser()) {
+            document.getElementById('tiktok-helper').style.display = 'flex';
+        }
+
+        // حماية زر الـ AR من التحميل ككود نصي داخل تيك توك
+        document.getElementById('ar-btn').addEventListener('click', function(e) {
+            if (isSocialBrowser()) {
+                e.preventDefault(); // منع فتح الرابط لمنع ظهور الكود النصي
+                document.getElementById('tiktok-helper').style.display = 'flex';
             }
         });
     </script>
+
 </body>
 </html>
