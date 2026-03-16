@@ -11,96 +11,73 @@
             background-color: #ffffff; margin: 0; padding: 20px;
         }
         .container { max-width: 500px; width: 100%; text-align: center; }
-        .brand-logo { width: 120px; height: 120px; border-radius: 50%; margin-bottom: 20px; animation: float 3s infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         
-        h1 { font-size: 28px; color: #1d1d1f; }
-        .brand-story { font-size: 15px; color: #666; line-height: 1.8; margin-bottom: 25px; }
-
-        /* أزرار الإجراء */
-        .btn {
+        /* زر المعاينة الأساسي - تم تغيير لونه لتمييزه */
+        .btn-ar {
             display: inline-flex; align-items: center; justify-content: center;
-            background: #f5d142; color: #000; text-decoration: none;
-            padding: 18px 45px; margin-bottom: 15px; border-radius: 40px; 
-            font-weight: 600; font-size: 18px; width: 85%; border: none; cursor: pointer;
-            box-shadow: 0 10px 20px rgba(245, 209, 66, 0.2);
+            background: #000; color: #fff; text-decoration: none;
+            padding: 20px 45px; margin-bottom: 20px; border-radius: 40px; 
+            font-weight: bold; font-size: 18px; width: 85%; border: none; cursor: pointer;
         }
-        .secondary-btn { background: #f5f5f7; color: #1d1d1f; box-shadow: none; font-size: 16px; }
 
-        /* تنبيه تيك توك */
-        #tiktok-helper {
+        /* نافذة التنبيه - ستكون ظاهرة لضمان رؤيتها */
+        #tt-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.98); z-index: 10000;
-            flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            background: #fff; z-index: 9999; padding: 30px; box-sizing: border-box;
         }
-        .tiktok-card { background: white; padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee; width: 80%; }
-        .arrow-up { font-size: 50px; position: absolute; top: 10px; right: 20px; animation: bounce 1s infinite; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .instruction-card {
+            border: 2px solid #f5d142; padding: 20px; border-radius: 20px; text-align: center;
+        }
+        .arrow { font-size: 50px; text-align: left; display: block; animation: moveUp 1s infinite; }
+        @keyframes moveUp { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
 <body>
 
-    <div id="tiktok-helper">
-        <div class="arrow-up">↗️</div>
-        <div class="tiktok-card">
-            <h2>رؤية البالونات في منزلك 🎈</h2>
-            <p>متصفح التطبيق الحالي لا يدعم المعاينة.</p>
-            <div style="text-align: right; background: #f9f9f9; padding: 15px; border-radius: 10px;">
-                <p>1️⃣ اضغط على <b>النقاط الثلاث (•••)</b> بالأعلى.</p>
-                <p>2️⃣ اختر <b>فتح في المتصفح</b> أو <b>Safari</b>.</p>
+    <div id="tt-overlay">
+        <div class="arrow">↗️</div>
+        <div class="instruction-card">
+            <h2>خطوة واحدة متبقية! 🎈</h2>
+            <p>لفتح الكاميرا والمعاينة، يرجى اتباع الآتي:</p>
+            <div style="text-align: right; background: #f5f5f7; padding: 15px; border-radius: 10px;">
+                1. اضغط على <b>النقاط الثلاث (•••)</b> بالأعلى.<br>
+                2. اختر <b>فتح في المتصفح</b> أو <b>Open in Safari</b>.
             </div>
-            <button onclick="document.getElementById('tiktok-helper').style.display='none'" style="margin-top:15px; background:none; border:none; color:blue; cursor:pointer;">إغلاق</button>
+            <button onclick="document.getElementById('tt-overlay').style.display='none'" style="margin-top: 20px; background: none; border: 1px solid #ccc; padding: 10px; border-radius: 10px;">أنا في المتصفح بالفعل</button>
         </div>
     </div>
 
     <div class="container">
-        <img src="logo.png" alt="Logo" class="brand-logo" onerror="this.style.display='none'">
-        <h1>بالونات العيد العملاقة 🎈</h1>
-        <div class="brand-story">في <b>هيليوم عيد</b> نسجنا لكم من خيوط الذهب حروفاً تُعلن الفرح وتزين لقاءات العيد.</div>
+        <img src="logo.png" width="120" style="margin-bottom:20px;">
+        <h1>بالونات العيد 🎈</h1>
+        
+        <a id="ar-link" rel="ar" href="HeliumEid.usdz" class="btn-ar">
+             اضغط هنا للمعاينة 🤳
+        </a>
 
-        <button onclick="handleARClick()" class="btn">
-            فتح المعاينة في منزلك 🤳
-        </button>
-
-        <a href="https://crlkll.zid.store/" class="btn secondary-btn">اطلب من المتجر 🛒</a>
-        <a href="https://wa.me/966577493584" class="btn secondary-btn">الدعم الفني 💬</a>
+        <a href="https://crlkll.zid.store/" style="display:block; margin-bottom:10px; color:#666;">اطلب من المتجر 🛒</a>
     </div>
 
     <script>
-        // 1. اكتشاف متصفح تيك توك أو إنستقرام
-        function isRestrictedBrowser() {
+        // فحص المتصفح فوراً وبدون انتظار
+        (function() {
             var ua = navigator.userAgent || navigator.vendor || window.opera;
-            return (ua.indexOf("TikTok") > -1) || (ua.indexOf("Instagram") > -1) || (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
-        }
-
-        // 2. معالجة الضغط على زر AR
-        function handleARClick() {
-            if (isRestrictedBrowser()) {
-                document.getElementById('tiktok-helper').style.display = 'flex';
-            } else {
-                // إنشاء رابط AR برمجياً لمنع ظهور الكود النصي
-                const arLink = document.createElement('a');
-                arLink.setAttribute('rel', 'ar');
-                // أضفنا متغير عشوائي لضمان عدم الكاش (Cache)
-                arLink.setAttribute('href', 'HeliumEid.usdz?v=' + new Date().getTime());
-                
-                // إضافة صورة مخفية (متطلب أساسي لـ iOS Quick Look)
-                const img = document.createElement('img');
-                img.src = 'logo.png';
-                arLink.appendChild(img);
-
-                document.body.appendChild(arLink);
-                arLink.click();
-                document.body.removeChild(arLink);
+            var isTikTok = (ua.indexOf("TikTok") > -1) || (ua.indexOf("Instagram") > -1);
+            
+            if (isTikTok) {
+                // إظهار التنبيه فوراً
+                document.getElementById('tt-overlay').style.display = 'block';
             }
-        }
+        })();
 
-        // إظهار التنبيه تلقائياً عند الدخول من تيك توك
-        window.onload = function() {
-            if (isRestrictedBrowser()) {
-                document.getElementById('tiktok-helper').style.display = 'flex';
+        // منع المتصفح من فتح الملف كنص إذا ضغط المستخدم وهو لا يزال داخل تيك توك
+        document.getElementById('ar-link').addEventListener('click', function(e) {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            if ((ua.indexOf("TikTok") > -1)) {
+                e.preventDefault(); // منع فتح الرابط (الذي يظهر ككود)
+                document.getElementById('tt-overlay').style.display = 'block'; // إظهار التنبيه بدلاً منه
             }
-        };
+        });
     </script>
 </body>
 </html>
