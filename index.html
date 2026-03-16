@@ -3,142 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>هيليوم العيد 🎈 - AR</title>
-    
+    <title>هيليوم العيد 🎈</title>
     <style>
-        :root {
-            --primary-gold: #D4AF37;
-            --dark-gold: #996515;
-            --overlay-gold: #DDBF6B;
-            --main-bg: #212121; /* خلفية داكنة مثل إحصائياتك */
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #111 0%, #333 100%);
-            color: #fff;
             margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
+            height: 100vh;
+            /* هنا نضع الخلفية اللي كانت في التصميم القديم */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
         }
 
-        .phone-mockup {
-            width: 320px;
-            height: 640px;
-            background: #fff;
-            border-radius: 40px;
-            border: 10px solid #111;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MSIgaGVpZ2h0PSI1MSIgdmlld0JveD0iMCAwIDUxIDUxIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNFM0U5RUEiIGZpbGwtb3BhY2l0eT0iMC4wNyI+PHBhdGggZD0iTTAgMGg1MXY1MUgwem0yNS41IDI1LjVhMS41IDEuNSAwIDEgMS0zIDAgMS41IDEuNSAwIDAgMSAzIDB6TTAgMGg1MXY1MUgwem0yNS41IDI1LjVhMS41IDEuNSAwIDEgMS0zIDAgMS41IDEuNSAwIDAgMSAzIDB6Ii8+PC9nPjwvZz48L3N2Zz4=');
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 350px;
+            width: 90%;
+            border: 2px solid #D4AF37;
         }
 
-        .header {
-            width: 100%;
-            height: 60px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            font-weight: bold;
-            position: absolute;
-            top: 0;
-            border-bottom: 2px solid var(--primary-gold);
-        }
-
-        .tiktok-alert {
+        .tiktok-hint {
             display: none;
-            background-color: #fceea7;
+            background: #fff3cd;
             color: #856404;
-            padding: 15px;
+            padding: 10px;
             border-radius: 10px;
-            margin: 80px 15px 15px 15px;
-            font-size: 14px;
-            text-align: right;
-            direction: rtl;
+            font-size: 13px;
+            margin-bottom: 15px;
         }
 
-        .content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            margin-top: 100px; /* بعد الألرت والهيدر */
-        }
-
-        h2.brand {
-            color: var(--dark-gold);
-            margin: 0 0 10px 0;
-            font-size: 28px;
-        }
-
-        .cta-btn {
-            background: linear-gradient(45deg, var(--primary-gold), var(--dark-gold));
+        h1 { color: #996515; margin-bottom: 10px; }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #D4AF37, #996515);
             color: white;
-            padding: 20px 30px;
+            padding: 15px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-            transition: transform 0.2s;
+            box-shadow: 0 5px 15px rgba(153, 101, 21, 0.3);
+            margin-top: 20px;
         }
 
-        .cta-btn:active { transform: scale(0.95); }
-
-        .ar-link {
+        .secondary-btn {
+            display: block;
+            margin-top: 15px;
+            color: #666;
             text-decoration: none;
-            color: inherit;
+            font-size: 14px;
         }
     </style>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            var isTikTok = ua.indexOf("TikTok") > -1;
-            var isSnapchat = ua.indexOf("Snapchat") > -1;
-
-            if (isTikTok || isSnapchat) {
-                document.getElementById("tiktok-alert").style.display = "block";
+            if (navigator.userAgent.includes("TikTok") || navigator.userAgent.includes("Snapchat")) {
+                document.getElementById("tiktok-msg").style.display = "block";
             }
         });
     </script>
 </head>
 <body>
 
-    <div class="phone-mockup">
-        <div class="header">
-            هيليوم العيد 🎈
+    <div class="container">
+        <div id="tiktok-msg" class="tiktok-hint">
+            🛑 إذا ما فتحت الكاميرا: اضغط الـ 3 نقاط فوق واختر <b>"فتح في المتصفح"</b>
         </div>
+        
+        <h2 style="margin:0;">🎈</h2>
+        <h1>هيليوم العيد</h1>
+        <p>جرب البالونات في صالتك الآن!</p>
 
-        <div id="tiktok-alert" class="tiktok-alert">
-            🛑 <b>تنبيه:</b><br>
-            الكاميرا قد لا تعمل هنا. اضغط على الـ 3 نقاط (⋮) في الزاوية واختر <b>"فتح في المتصفح"</b> لتجربة الـ AR.
-        </div>
+        <a rel="ar" href="HeliumEid.usdz" class="btn">
+            فتح المعاينة (AR) 🧊
+        </a>
 
-        <div class="content">
-            <h2 class="brand">هيـليـوم العـيد 🎈</h2>
-            <p style="color: #666; margin: 0 0 40px 0;">أهل الأحساء الكرام.. جربوا البالونات في صالتكم الآن!</p>
-
-            <a rel="ar" href="HeliumEid.usdz" class="ar-link">
-                <div class="cta-btn">
-                    اضغط هنا لفتح الكاميرا 🧊
-                </div>
-            </a>
-            
-            <p style="color: #666; font-size: 14px; margin-top: 15px;">بعد الفتح، اضغط على أيقونة المكعب 🧊 بالأعلى.</p>
-        </div>
+        <a href="https://crlkll.zid.store/" class="secondary-btn">زيارة المتجر للطلب 🛒</a>
     </div>
 
 </body>
