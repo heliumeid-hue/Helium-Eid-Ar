@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <title>هيليوم العيد | Helium Eid</title>
     <style>
         body { 
@@ -22,7 +26,7 @@
         
         .brand-story { font-size: 17px; color: #636366; margin-bottom: 35px; line-height: 1.6; padding: 0 10px; font-weight: 500; }
 
-        /* صندوق الإرشادات مطابق تماماً للصورة */
+        /* صندوق الإرشادات - مطابق للصورة */
         .instruction-box {
             background: #fff9e6;
             border: 1.5px dashed #f5d142;
@@ -39,12 +43,12 @@
             max-width: 500px;
         }
 
-        /* الأزرار بشكل Pill (بيضاوي) وظلال ناعمة */
+        /* الأزرار - تصميم Pill وظلال ناعمة */
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f0d364; /* اللون الذهبي من الصورة */
+            background: #f0d364; 
             color: #000000;
             text-decoration: none;
             padding: 20px 40px;
@@ -71,7 +75,7 @@
 
         .footer { margin-top: 60px; font-size: 14px; color: #8e8e93; font-weight: 400; }
 
-        /* طبقة تنبيه تيك توك - تصميم متناسق */
+        /* طبقة تنبيه تيك توك */
         #tiktok-helper {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(255, 255, 255, 0.98); z-index: 10000;
@@ -92,16 +96,18 @@
         <div class="tiktok-card">
             <div class="tiktok-arrow">↗️</div>
             <h2 style="margin:0 0 15px 0;">معاينة البالونات 🎈</h2>
-            <p style="color: #636366; line-height: 1.5; margin-bottom: 20px;">تطبيق تيك توك لا يدعم الكاميرا مباشرة. يرجى فتح الصفحة في متصفح خارجي:</p>
+            <p style="color: #636366; line-height: 1.5; margin-bottom: 20px;">لفتح الكاميرا، يرجى الخروج من متصفح التطبيق وفتح الصفحة في متصفح خارجي:</p>
             <div style="text-align: right; background: #fff9e6; padding: 20px; border-radius: 20px; font-size: 15px; color: #856404; line-height: 1.8;">
                 1️⃣ اضغط على <b>النقاط الثلاث (•••)</b> بالأعلى.<br>
                 2️⃣ اختر <b>فتح في المتصفح</b> أو <b>Safari</b>.
             </div>
-            <button onclick="document.getElementById('tiktok-helper').style.display='none'" style="margin-top:20px; background:none; border:none; color:#999; text-decoration:underline; cursor:pointer;">إغلاق</button>
+            <button onclick="document.getElementById('tiktok-helper').style.display='none'" style="margin-top:20px; background:none; border:none; color:#999; text-decoration:underline; cursor:pointer;">إغلاق التنبيه</button>
         </div>
     </div>
 
     <div class="container">
+        <img src="logo.png" width="120" height="120" style="border-radius: 50%; object-fit: contain; margin-bottom: 10px;" onerror="this.style.display='none'">
+        
         <h1>🎈 بالونات العيد العملاقة</h1>
         
         <div class="brand-story">
@@ -113,9 +119,9 @@
             <span>💡 بعد الضغط على الزر، اضغط على <b>أيقونة المكعب</b> 🧊 في الأعلى لتشغيل الكاميرا</span>
         </div>
 
-        <a id="ar-btn" rel="ar" href="HeliumEid.usdz" class="btn">
+        <button id="ar-btn" class="btn">
             فتح المعاينة في منزلك 🤳
-        </a>
+        </button>
 
         <a href="https://crlkll.zid.store/" class="btn secondary-btn">
             اطلب من المتجر 🛒
@@ -131,24 +137,41 @@
     </div>
 
     <script>
-        // فحص المتصفحات الاجتماعية
+        // 1. وظيفة فحص المتصفح
         function isSocialBrowser() {
             var ua = navigator.userAgent || navigator.vendor || window.opera;
             return (ua.indexOf("TikTok") > -1) || (ua.indexOf("Instagram") > -1);
         }
 
-        // إظهار التنبيه لمستخدمي تيك توك لمنع ظهور الكود النصي
-        if (isSocialBrowser()) {
-            document.getElementById('tiktok-helper').style.display = 'flex';
-        }
-
-        // منع فتح الملف مباشرة داخل تيك توك لضمان عدم ظهور الأكواد
+        // 2. معالجة الضغط على زر المعاينة
         document.getElementById('ar-btn').addEventListener('click', function(e) {
             if (isSocialBrowser()) {
-                e.preventDefault();
+                // إذا كان في تيك توك، نظهر التنبيه فقط
                 document.getElementById('tiktok-helper').style.display = 'flex';
+            } else {
+                // إذا كان في متصفح خارجي، ننشئ رابط AR بمتغير زمني لكسر الكاش
+                const timestamp = new Date().getTime();
+                const arLink = document.createElement('a');
+                arLink.setAttribute('rel', 'ar');
+                arLink.setAttribute('href', 'HeliumEid.usdz?v=' + timestamp);
+                
+                // إضافة صورة مخفية لضمان عمل Quick Look
+                const img = document.createElement('img');
+                img.src = 'logo.png';
+                arLink.appendChild(img);
+
+                document.body.appendChild(arLink);
+                arLink.click();
+                document.body.removeChild(arLink);
             }
         });
+
+        // إظهار التنبيه تلقائياً عند الدخول من تيك توك لأول مرة
+        window.onload = function() {
+            if (isSocialBrowser()) {
+                document.getElementById('tiktok-helper').style.display = 'flex';
+            }
+        };
     </script>
 
 </body>
