@@ -22,28 +22,44 @@
         }
         .container { max-width: 600px; width: 100%; text-align: center; }
         
-        h1 { font-size: 32px; color: #1d1d1f; margin-bottom: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        h1 { 
+            font-size: 34px; 
+            color: #1d1d1f; 
+            margin-bottom: 15px; 
+            font-weight: 800; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 12px; 
+        }
         
-        .brand-story { font-size: 17px; color: #636366; margin-bottom: 35px; line-height: 1.6; padding: 0 10px; font-weight: 500; }
+        .brand-story { 
+            font-size: 18px; 
+            color: #636366; 
+            margin-bottom: 40px; 
+            line-height: 1.6; 
+            padding: 0 15px; 
+            font-weight: 500; 
+        }
 
-        /* صندوق الإرشادات - مطابق للصورة */
+        /* صندوق الإرشادات - مطابق للصورة بالظبط */
         .instruction-box {
             background: #fff9e6;
             border: 1.5px dashed #f5d142;
-            padding: 18px;
+            padding: 18px 25px;
             border-radius: 20px;
-            margin-bottom: 40px;
-            font-size: 15px;
+            margin-bottom: 45px;
+            font-size: 16px;
             color: #856404;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             width: 90%;
-            max-width: 500px;
+            max-width: 520px;
         }
 
-        /* الأزرار - تصميم Pill وظلال ناعمة */
+        /* الأزرار - تصميم الـ Pill مع الظل الناعم من الصورة */
         .btn {
             display: flex;
             align-items: center;
@@ -51,43 +67,65 @@
             background: #f0d364; 
             color: #000000;
             text-decoration: none;
-            padding: 20px 40px;
-            margin: 0 auto 18px;
-            border-radius: 50px; 
+            padding: 22px 40px;
+            margin: 0 auto 20px;
+            border-radius: 60px; 
             font-weight: 700;
-            font-size: 19px;
-            box-shadow: 0 10px 25px rgba(240, 211, 100, 0.3);
-            transition: all 0.3s ease;
-            width: 85%;
+            font-size: 20px;
+            box-shadow: 0 12px 30px rgba(240, 211, 100, 0.4);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            width: 90%;
             border: none;
             cursor: pointer;
-            gap: 10px;
+            gap: 12px;
         }
-        .btn:active { transform: scale(0.97); }
+        .btn:active { transform: scale(0.96); box-shadow: 0 5px 15px rgba(240, 211, 100, 0.3); }
 
         .secondary-btn { 
             background: #f2f2f7; 
             color: #1d1d1f; 
             box-shadow: none; 
-            font-size: 18px; 
+            font-size: 19px; 
             font-weight: 600;
         }
 
-        .footer { margin-top: 60px; font-size: 14px; color: #8e8e93; font-weight: 400; }
+        .footer { 
+            margin-top: 70px; 
+            font-size: 15px; 
+            color: #aeaeb2; 
+            font-weight: 400; 
+        }
 
-        /* طبقة تنبيه تيك توك */
+        /* نافذة تنبيه تيك توك بستايل راقي */
         #tiktok-helper {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.98); z-index: 10000;
-            flex-direction: column; align-items: center; justify-content: center; padding: 20px;
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.98); 
+            z-index: 10000;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px;
         }
         .tiktok-card {
-            background: #ffffff; padding: 30px; border-radius: 30px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1); border: 2px solid #f0d364; 
-            max-width: 400px; text-align: center; position: relative;
+            background: #ffffff; 
+            padding: 35px; 
+            border-radius: 35px; 
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12); 
+            border: 2.5px solid #f0d364; 
+            max-width: 420px; 
+            text-align: center; 
+            position: relative;
         }
-        .tiktok-arrow { position: absolute; top: -50px; right: 10px; font-size: 50px; animation: bounce 1s infinite; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .tiktok-arrow { 
+            position: absolute; 
+            top: -55px; 
+            right: 15px; 
+            font-size: 55px; 
+            animation: bounce 1.2s infinite; 
+        }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
     </style>
 </head>
 <body>
@@ -95,19 +133,19 @@
     <div id="tiktok-helper">
         <div class="tiktok-card">
             <div class="tiktok-arrow">↗️</div>
-            <h2 style="margin:0 0 15px 0;">معاينة البالونات 🎈</h2>
-            <p style="color: #636366; line-height: 1.5; margin-bottom: 20px;">لفتح الكاميرا، يرجى الخروج من متصفح التطبيق وفتح الصفحة في متصفح خارجي:</p>
-            <div style="text-align: right; background: #fff9e6; padding: 20px; border-radius: 20px; font-size: 15px; color: #856404; line-height: 1.8;">
+            <h2 style="margin:0 0 15px 0; font-size: 24px;">تحتاج إلى فتح المتصفح 🎈</h2>
+            <p style="color: #636366; line-height: 1.6; margin-bottom: 25px; font-size: 17px;">
+                متصفح تيك توك لا يدعم تشغيل الكاميرا. يرجى اتباع الآتي للمعاينة:
+            </p>
+            <div style="text-align: right; background: #fff9e6; padding: 20px; border-radius: 20px; font-size: 16px; color: #856404; line-height: 1.8; border: 1px solid #f5d142;">
                 1️⃣ اضغط على <b>النقاط الثلاث (•••)</b> بالأعلى.<br>
                 2️⃣ اختر <b>فتح في المتصفح</b> أو <b>Safari</b>.
             </div>
-            <button onclick="document.getElementById('tiktok-helper').style.display='none'" style="margin-top:20px; background:none; border:none; color:#999; text-decoration:underline; cursor:pointer;">إغلاق التنبيه</button>
+            <button onclick="document.getElementById('tiktok-helper').style.display='none'" style="margin-top:25px; background:none; border:none; color:#aeaeb2; text-decoration:underline; cursor:pointer; font-size: 14px;">إغلاق التنبيه</button>
         </div>
     </div>
 
     <div class="container">
-        <img src="logo.png" width="120" height="120" style="border-radius: 50%; object-fit: contain; margin-bottom: 10px;" onerror="this.style.display='none'">
-        
         <h1>🎈 بالونات العيد العملاقة</h1>
         
         <div class="brand-story">
@@ -137,28 +175,27 @@
     </div>
 
     <script>
-        // 1. وظيفة فحص المتصفح
-        function isSocialBrowser() {
+        // دالة كشف المتصفحات المقيدة (تيك توك وانستقرام)
+        function isRestrictedBrowser() {
             var ua = navigator.userAgent || navigator.vendor || window.opera;
             return (ua.indexOf("TikTok") > -1) || (ua.indexOf("Instagram") > -1);
         }
 
-        // 2. معالجة الضغط على زر المعاينة
+        // التعامل مع زر المعاينة
         document.getElementById('ar-btn').addEventListener('click', function(e) {
-            if (isSocialBrowser()) {
-                // إذا كان في تيك توك، نظهر التنبيه فقط
+            if (isRestrictedBrowser()) {
                 document.getElementById('tiktok-helper').style.display = 'flex';
             } else {
-                // إذا كان في متصفح خارجي، ننشئ رابط AR بمتغير زمني لكسر الكاش
-                const timestamp = new Date().getTime();
+                // تقنية كسر الكاش (Cache Busting) لضمان تحميل أحدث ملف
+                const vMarker = new Date().getTime();
                 const arLink = document.createElement('a');
                 arLink.setAttribute('rel', 'ar');
-                arLink.setAttribute('href', 'HeliumEid.usdz?v=' + timestamp);
+                arLink.setAttribute('href', 'HeliumEid.usdz?v=' + vMarker);
                 
-                // إضافة صورة مخفية لضمان عمل Quick Look
-                const img = document.createElement('img');
-                img.src = 'logo.png';
-                arLink.appendChild(img);
+                // إضافة صورة مخفية لضمان استجابة نظام iOS
+                const hiddenImg = document.createElement('img');
+                hiddenImg.src = 'logo.png'; // تأكد من وجود ملف شعار بهذا الاسم أو استبدله بأي صورة
+                arLink.appendChild(hiddenImg);
 
                 document.body.appendChild(arLink);
                 arLink.click();
@@ -166,12 +203,12 @@
             }
         });
 
-        // إظهار التنبيه تلقائياً عند الدخول من تيك توك لأول مرة
-        window.onload = function() {
-            if (isSocialBrowser()) {
+        // إظهار التنبيه تلقائياً عند الدخول من تيك توك
+        window.addEventListener('load', function() {
+            if (isRestrictedBrowser()) {
                 document.getElementById('tiktok-helper').style.display = 'flex';
             }
-        };
+        });
     </script>
 
 </body>
