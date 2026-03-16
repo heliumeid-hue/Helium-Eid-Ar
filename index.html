@@ -4,96 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <title>هيليوم العيد | Helium Eid</title>
     <style>
         body { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            min-height: 100vh; 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #ffffff; 
-            margin: 0; 
-            padding: 20px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            min-height: 100vh; font-family: -apple-system, sans-serif; 
+            background-color: #ffffff; margin: 0; padding: 20px;
         }
         .container { max-width: 500px; width: 100%; text-align: center; }
-        
         .logo-top { width: 80px; margin-bottom: 20px; }
+        h1 { font-size: 28px; color: #1d1d1f; margin-bottom: 12px; font-weight: 700; }
+        .brand-story { font-size: 15px; color: #86868b; margin-bottom: 30px; line-height: 1.5; padding: 0 15px; }
 
-        h1 { 
-            font-size: 28px; 
-            color: #1d1d1f; 
-            margin-bottom: 12px; 
-            font-weight: 700; 
-        }
-        
-        .brand-story { 
-            font-size: 15px; 
-            color: #86868b; 
-            margin-bottom: 30px; 
-            line-height: 1.5; 
-            padding: 0 15px;
-        }
-
-        /* صندوق الإرشادات بالمقاس الدقيق */
         .instruction-box {
-            background: #fffdf5;
-            border: 1px dashed #f5d142;
-            padding: 12px 20px;
-            border-radius: 18px;
-            margin-bottom: 35px;
-            font-size: 13.5px;
-            color: #856404;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            width: 85%;
+            background: #fffdf5; border: 1px dashed #f5d142;
+            padding: 12px 20px; border-radius: 18px; margin-bottom: 35px;
+            font-size: 13.5px; color: #856404; display: inline-flex; align-items: center; justify-content: center; gap: 6px; width: 85%;
         }
 
-        /* مقاسات الأزرار مطابقة للصورة (Pill Shape) */
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #edd37e; /* اللون الذهبي الهادئ من الصورة */
-            color: #000000;
-            text-decoration: none;
-            padding: 16px 0;
-            margin: 0 auto 12px;
-            border-radius: 40px; 
-            font-weight: 600;
-            font-size: 17px;
-            width: 85%; /* العرض المتناسق */
-            border: none;
-            cursor: pointer;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(237, 211, 126, 0.2);
+            display: flex; align-items: center; justify-content: center;
+            background: #edd37e; color: #000; text-decoration: none;
+            padding: 16px 0; margin: 0 auto 12px; border-radius: 40px; 
+            font-weight: 600; font-size: 17px; width: 85%; border: none; cursor: pointer; gap: 8px;
         }
+        .secondary-btn { background: #f2f2f7; color: #1c1c1e; }
 
-        .secondary-btn { 
-            background: #f2f2f7; 
-            color: #1c1c1e; 
-            box-shadow: none; 
-        }
-
-        .footer { 
-            margin-top: 50px; 
-            font-size: 12px; 
-            color: #aeaeb2; 
-        }
-
-        /* طبقة التنبيه بستايل متناسق */
         #tiktok-helper {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(255, 255, 255, 0.98); z-index: 10000;
-            flex-direction: column; align-items: center; justify-content: center; padding: 20px;
+            flex-direction: column; align-items: center; justify-content: center;
         }
         .tiktok-card {
             background: #ffffff; padding: 30px; border-radius: 25px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 1.5px solid #edd37e; 
-            max-width: 380px; text-align: center;
+            border: 1.5px solid #edd37e; max-width: 380px; text-align: center;
         }
     </style>
 </head>
@@ -102,45 +49,29 @@
     <div id="tiktok-helper">
         <div class="tiktok-card" style="position: relative;">
             <div style="position: absolute; top: -45px; right: 0; font-size: 40px;">↗️</div>
-            <h2 style="margin:0 0 10px 0; font-size: 20px;">خطوة واحدة متبقية 🎈</h2>
-            <p style="font-size: 14px; color: #666; margin-bottom: 20px;">تطبيق تيك توك لا يدعم المعاينة. يرجى الخروج للمتصفح:</p>
-            <div style="text-align: right; background: #fffdf5; padding: 15px; border-radius: 15px; font-size: 14px; color: #856404; line-height: 1.7; border: 1px solid #f5d142;">
+            <h2>تحديث مطلوب 🎈</h2>
+            <p>تيك توك يعرض نسخة قديمة. يرجى الفتح في المتصفح لرؤية التعديلات:</p>
+            <div style="text-align: right; background: #fffdf5; padding: 15px; border-radius: 15px; font-size: 14px; color: #856404;">
                 1️⃣ اضغط على <b>النقاط الثلاث (•••)</b> بالأعلى.<br>
                 2️⃣ اختر <b>فتح في المتصفح</b> أو <b>Safari</b>.
             </div>
-            <button onclick="document.getElementById('tiktok-helper').style.display='none'" style="margin-top:20px; background:none; border:none; color:#aeaeb2; text-decoration:underline; font-size:12px;">إغلاق</button>
+            <button onclick="document.getElementById('tiktok-helper').style.display='none'" style="margin-top:20px; border:none; background:none; color:#aaa; text-decoration:underline;">إغلاق</button>
         </div>
     </div>
 
     <div class="container">
         <img src="logo.png" class="logo-top" onerror="this.style.display='none'">
-        
         <h1>بالونات العيد العملاقة 🎈</h1>
-        
-        <div class="brand-story">
-            خلف كل بالون قصة فرح، ومع كل خيط هيليوم أمنية عيد. في هيليوم عيد<br>
-            نسجنا لكم من خيوط الذهب حروفاً تُعلن الفرح وتزين لقاءات العيد.
-        </div>
+        <div class="brand-story">نسجنا لكم من خيوط الذهب حروفاً تُعلن الفرح وتزين لقاءات العيد.</div>
 
         <div class="instruction-box">
-            <span>💡 بعد الضغط على الزر، اضغط على <b>أيقونة المكعب</b> 🧊 في الأعلى لتشغيل الكاميرا</span>
+            <span>💡 بعد الضغط، اختر أيقونة المكعب 🧊 لتشغيل الكاميرا</span>
         </div>
 
-        <button id="ar-btn" class="btn">
-            🤳 فتح المعاينة في منزلك
-        </button>
+        <button id="ar-btn" class="btn">🤳 فتح المعاينة في منزلك</button>
 
-        <a href="https://crlkll.zid.store/" class="btn secondary-btn">
-            🛒 اطلب من المتجر
-        </a>
-
-        <a href="https://wa.me/966577493584" class="btn secondary-btn">
-            💬 الدعم الفني والاستفسارات
-        </a>
-
-        <div class="footer">
-            © جميع الحقوق محفوظة لمتجر هيليوم العيد
-        </div>
+        <a href="https://crlkll.zid.store/" class="btn secondary-btn">🛒 اطلب من المتجر</a>
+        <a href="https://wa.me/966577493584" class="btn secondary-btn">💬 الدعم الفني</a>
     </div>
 
     <script>
@@ -153,9 +84,13 @@
             if (isSocial()) {
                 document.getElementById('tiktok-helper').style.display = 'flex';
             } else {
+                // حل كسر الكاش النهائي: إضافة رقم فريد جداً للرابط
+                const uniqueVersion = new Date().getTime(); 
                 const link = document.createElement('a');
                 link.setAttribute('rel', 'ar');
-                link.setAttribute('href', 'HeliumEid.usdz?v=' + new Date().getTime());
+                // الرابط سيصبح مثلاً: HeliumEid.usdz?update=17123456789
+                link.setAttribute('href', 'HeliumEid.usdz?update=' + uniqueVersion);
+                
                 const img = document.createElement('img');
                 img.src = 'logo.png';
                 link.appendChild(img);
@@ -165,8 +100,11 @@
             }
         });
 
+        // إذا كان المستخدم داخل تيك توك، نظهر التنبيه فوراً عند التحميل
         window.onload = function() {
-            if (isSocial()) document.getElementById('tiktok-helper').style.display = 'flex';
+            if (isSocial()) {
+                document.getElementById('tiktok-helper').style.display = 'flex';
+            }
         };
     </script>
 </body>
