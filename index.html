@@ -3,70 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>هيليوم العيد 🎈</title>
+    <title>هيليوم العيد | Helium Eid</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            /* هنا نضع الخلفية اللي كانت في التصميم القديم */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2070&auto=format&fit=crop'); 
-            background-size: cover;
-            background-position: center;
+        body { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 100vh; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #ffffff; 
+            margin: 0; 
+            padding: 20px;
         }
-
-        .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            text-align: center;
-            max-width: 350px;
-            width: 90%;
-            border: 2px solid #D4AF37;
-        }
-
-        .tiktok-hint {
-            display: none;
-            background: #fff3cd;
-            color: #856404;
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
-
-        h1 { color: #996515; margin-bottom: 10px; }
+        .container { max-width: 500px; width: 100%; text-align: center; }
         
-        .btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #D4AF37, #996515);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(153, 101, 21, 0.3);
-            margin-top: 20px;
+        .brand-logo { width: 120px; height: 120px; border-radius: 50%; margin-bottom: 20px; object-fit: contain; }
+        
+        h1 { font-size: 28px; color: #1d1d1f; margin-bottom: 15px; font-weight: 600; }
+        
+        .brand-story { font-size: 15px; color: #666; margin-bottom: 25px; line-height: 1.8; padding: 0 25px; }
+
+        /* صندوق الإرشادات */
+        .instruction-box {
+            background: #fff9e6;
+            border: 1px dashed #f5d142;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #856404;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .secondary-btn {
-            display: block;
-            margin-top: 15px;
-            color: #666;
-            text-decoration: none;
+        /* صندوق تنبيه تيك توك وسناب شات (مخفي افتراضياً) */
+        .tiktok-alert {
+            display: none;
+            background: #ffe3e3;
+            border: 1px solid #ffb3b3;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 20px;
             font-size: 14px;
+            color: #cc0000;
+            font-weight: bold;
         }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5d142; 
+            color: #000000;
+            text-decoration: none;
+            padding: 18px 45px;
+            margin-bottom: 15px;
+            border-radius: 40px; 
+            font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 10px 20px rgba(245, 209, 66, 0.2);
+            transition: all 0.3s ease;
+            width: 85%;
+        }
+        .btn:active { transform: scale(0.96); }
+
+        .secondary-btn { background: #f5f5f7; color: #1d1d1f; box-shadow: none; font-size: 16px; }
+
+        .footer { margin-top: 50px; font-size: 12px; color: #aeaeb2; }
     </style>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            if (navigator.userAgent.includes("TikTok") || navigator.userAgent.includes("Snapchat")) {
-                document.getElementById("tiktok-msg").style.display = "block";
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            if (ua.includes("TikTok") || ua.includes("Snapchat")) {
+                document.getElementById("tiktok-alert").style.display = "block";
             }
         });
     </script>
@@ -74,19 +87,37 @@
 <body>
 
     <div class="container">
-        <div id="tiktok-msg" class="tiktok-hint">
-            🛑 إذا ما فتحت الكاميرا: اضغط الـ 3 نقاط فوق واختر <b>"فتح في المتصفح"</b>
+        <div id="tiktok-alert" class="tiktok-alert">
+            🛑 تنبيه: الكاميرا لا تعمل داخل هذا التطبيق. اضغط على الـ 3 نقاط (⋮) بالأعلى واختر <b>"فتح في المتصفح"</b> لتجربة الواقع المعزز.
         </div>
+
+        <img src="logo.png" alt="هيليوم العيد" class="brand-logo" onerror="this.style.display='none'">
         
-        <h2 style="margin:0;">🎈</h2>
-        <h1>هيليوم العيد</h1>
-        <p>جرب البالونات في صالتك الآن!</p>
+        <h1>بالونات العيد العملاقة 🎈</h1>
+        
+        <div class="brand-story">
+            خلف كل بالون قصة فرح، ومع كل خيط هيليوم أمنية عيد. في <b>هيليوم عيد</b> نسجنا لكم من خيوط الذهب حروفاً تُعلن الفرح وتزين لقاءات العيد.
+        </div>
+
+        <div class="instruction-box">
+            <span>💡 بعد الضغط على الزر، اضغط على <b>أيقونة المكعب</b> 🧊 في الأعلى لتشغيل الكاميرا</span>
+        </div>
 
         <a rel="ar" href="HeliumEid.usdz" class="btn">
-            فتح المعاينة (AR) 🧊
+             فتح المعاينة في منزلك 🤳
         </a>
 
-        <a href="https://crlkll.zid.store/" class="secondary-btn">زيارة المتجر للطلب 🛒</a>
+        <a href="https://crlkll.zid.store/" class="btn secondary-btn">
+            اطلب من المتجر 🛒
+        </a>
+
+        <a href="https://wa.me/966577493584" class="btn secondary-btn">
+            الدعم الفني والاستفسارات 💬
+        </a>
+    </div>
+
+    <div class="footer">
+        © جميع الحقوق محفوظة لمتجر هيليوم العيد
     </div>
 
 </body>
