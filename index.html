@@ -12,26 +12,48 @@
         body { 
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
             min-height: 100vh; font-family: -apple-system, sans-serif; 
-            background-color: #ffffff; margin: 0; padding: 20px;
+            background-color: #EFE6D2; /* لون الفانيليا الدافئ للخلفية */
+            margin: 0; padding: 20px;
         }
         .container { max-width: 500px; width: 100%; text-align: center; }
         .logo-top { width: 80px; margin-bottom: 20px; }
-        h1 { font-size: 26px; color: #1d1d1f; margin-bottom: 12px; font-weight: 700; line-height: 1.4; }
-        .brand-story { font-size: 15.5px; color: #86868b; margin-bottom: 35px; line-height: 1.6; padding: 0 15px; }
+        
+        /* تعديل ألوان النصوص لتتناسب مع الخلفية وتكون مريحة للعين */
+        h1 { font-size: 26px; color: #4A3B40; margin-bottom: 12px; font-weight: 700; line-height: 1.4; }
+        .brand-story { font-size: 15.5px; color: #6E5C62; margin-bottom: 35px; line-height: 1.6; padding: 0 15px; }
 
         .btn {
             display: flex; align-items: center; justify-content: center;
-            background: #edd37e; color: #000; text-decoration: none;
+            background: #E2A9B6; /* الوردي المترب للزر الرئيسي */
+            color: #ffffff; /* نص أبيض لتباين جميل */
+            text-decoration: none;
             padding: 16px 20px; margin: 0 auto 12px; border-radius: 40px; 
             font-weight: 600; font-size: 16px; width: 85%; border: none; cursor: pointer; gap: 8px;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-sizing: border-box;
             line-height: 1.4;
+            box-shadow: 0 4px 6px rgba(226, 169, 182, 0.2);
         }
         .btn:hover {
             transform: scale(0.98);
+            box-shadow: 0 2px 4px rgba(226, 169, 182, 0.2);
         }
-        .secondary-btn { background: #f2f2f7; color: #1c1c1e; }
+        
+        /* الزر الثانوي الأول - لون النعناع */
+        .store-btn { 
+            background: #B6D6C8; 
+            color: #1d1d1f; 
+            box-shadow: 0 4px 6px rgba(182, 214, 200, 0.2);
+        }
+        .store-btn:hover { box-shadow: 0 2px 4px rgba(182, 214, 200, 0.2); }
+
+        /* الزر الثانوي الثاني - لون اللافندر */
+        .whatsapp-btn { 
+            background: #C6B4D6; 
+            color: #1d1d1f; 
+            box-shadow: 0 4px 6px rgba(198, 180, 214, 0.2);
+        }
+        .whatsapp-btn:hover { box-shadow: 0 2px 4px rgba(198, 180, 214, 0.2); }
     </style>
 </head>
 <body>
@@ -46,9 +68,8 @@
         </div>
 
         <a href="https://www.tiktok.com/@helium.aleid0" target="_blank" class="btn">🎵 تابعنا على تيك توك</a>
-
-        <a href="https://crlkll.zid.store/" target="_blank" class="btn secondary-btn">🛒 اطلب من المتجر</a>
-        <a href="https://wa.me/966577493584" target="_blank" class="btn secondary-btn">💬 تواصل معنا على الواتس للاستفسارات والتصاميم الخاصة</a>
+        <a href="https://crlkll.zid.store/" target="_blank" class="btn store-btn">🛒 اطلب من المتجر</a>
+        <a href="https://wa.me/966577493584" target="_blank" class="btn whatsapp-btn">💬 تواصل معنا على الواتس للاستفسارات والتصاميم الخاصة</a>
     </div>
 
 </body>
