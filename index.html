@@ -12,26 +12,26 @@
         body { 
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
             min-height: 100vh; font-family: -apple-system, sans-serif; 
-            background-color: #EFE6D2; /* لون الفانيليا الدافئ للخلفية */
+            background-color: #EFE6D2; 
             margin: 0; padding: 20px;
         }
         .container { max-width: 500px; width: 100%; text-align: center; }
         
-        /* تعديل حجم الشعار ليكون بارزاً وكبيراً */
+        /* تكبير الشعار */
         .logo-top { 
-            width: 220px; /* تم زيادة العرض بشكل كبير */
+            width: 180px; /* حجم كبير ومناسب لشاشات الجوال */
+            max-width: 100%;
             height: auto;
-            margin-bottom: 30px; /* تم زيادة الهامش ليعطي مساحة أكبر */
+            margin-bottom: 25px; 
         }
         
-        /* تعديل ألوان النصوص لتتناسب مع الخلفية وتكون مريحة للعين */
         h1 { font-size: 26px; color: #4A3B40; margin-bottom: 12px; font-weight: 700; line-height: 1.4; }
         .brand-story { font-size: 15.5px; color: #6E5C62; margin-bottom: 35px; line-height: 1.6; padding: 0 15px; }
 
         .btn {
             display: flex; align-items: center; justify-content: center;
-            background: #E2A9B6; /* الوردي المترب للزر الرئيسي */
-            color: #ffffff; /* نص أبيض لتباين جميل */
+            background: #E2A9B6; 
+            color: #ffffff; 
             text-decoration: none;
             padding: 16px 20px; margin: 0 auto 12px; border-radius: 40px; 
             font-weight: 600; font-size: 16px; width: 85%; border: none; cursor: pointer; gap: 8px;
@@ -45,7 +45,6 @@
             box-shadow: 0 2px 4px rgba(226, 169, 182, 0.2);
         }
         
-        /* الزر الثانوي الأول - لون النعناع */
         .store-btn { 
             background: #B6D6C8; 
             color: #1d1d1f; 
@@ -53,7 +52,6 @@
         }
         .store-btn:hover { box-shadow: 0 2px 4px rgba(182, 214, 200, 0.2); }
 
-        /* الزر الثانوي الثاني - لون اللافندر */
         .whatsapp-btn { 
             background: #C6B4D6; 
             color: #1d1d1f; 
@@ -65,7 +63,7 @@
 <body>
 
     <div class="container">
-        <img src="helium_eid_new_logo.png" class="logo-top" onerror="this.style.display='none'">
+        <img src="logo.png" class="logo-top" alt="شعار هيليوم العيد">
         
         <h1>معنا.. كل احتفال هو عيد 🎉</h1>
         <div class="brand-story">
