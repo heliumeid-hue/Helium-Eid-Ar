@@ -17,95 +17,37 @@
         .container { max-width: 500px; width: 100%; text-align: center; }
         .logo-top { width: 80px; margin-bottom: 20px; }
         h1 { font-size: 28px; color: #1d1d1f; margin-bottom: 12px; font-weight: 700; }
-        .brand-story { font-size: 15px; color: #86868b; margin-bottom: 30px; line-height: 1.5; padding: 0 15px; }
-
-        .instruction-box {
-            background: #fffdf5; border: 1px dashed #f5d142;
-            padding: 12px 20px; border-radius: 18px; margin-bottom: 35px;
-            font-size: 13.5px; color: #856404; display: inline-flex; align-items: center; justify-content: center; gap: 6px; width: 85%;
-        }
+        .brand-story { font-size: 15px; color: #86868b; margin-bottom: 35px; line-height: 1.5; padding: 0 15px; }
 
         .btn {
             display: flex; align-items: center; justify-content: center;
             background: #edd37e; color: #000; text-decoration: none;
-            padding: 16px 0; margin: 0 auto 12px; border-radius: 40px; 
-            font-weight: 600; font-size: 17px; width: 85%; border: none; cursor: pointer; gap: 8px;
+            /* قمنا بتعديل الحشوة هنا ليتناسب مع النص الطويل */
+            padding: 16px 20px; margin: 0 auto 12px; border-radius: 40px; 
+            font-weight: 600; font-size: 16px; width: 85%; border: none; cursor: pointer; gap: 8px;
+            transition: transform 0.2s ease;
+            box-sizing: border-box;
+            line-height: 1.4;
+        }
+        .btn:hover {
+            transform: scale(0.98);
         }
         .secondary-btn { background: #f2f2f7; color: #1c1c1e; }
-
-        #tiktok-helper {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.98); z-index: 10000;
-            flex-direction: column; align-items: center; justify-content: center;
-        }
-        .tiktok-card {
-            background: #ffffff; padding: 30px; border-radius: 25px; 
-            border: 1.5px solid #edd37e; max-width: 380px; text-align: center;
-        }
     </style>
 </head>
 <body>
 
-    <div id="tiktok-helper">
-        <div class="tiktok-card" style="position: relative;">
-            <div style="position: absolute; top: -45px; right: 0; font-size: 40px;">↗️</div>
-            <h2>تحديث مطلوب 🎈</h2>
-            <p>تيك توك يعرض نسخة قديمة. يرجى الفتح في المتصفح لرؤية التعديلات:</p>
-            <div style="text-align: right; background: #fffdf5; padding: 15px; border-radius: 15px; font-size: 14px; color: #856404;">
-                1️⃣ اضغط على <b>النقاط الثلاث (•••)</b> بالأعلى.<br>
-                2️⃣ اختر <b>فتح في المتصفح</b> أو <b>Safari</b>.
-            </div>
-            <button onclick="document.getElementById('tiktok-helper').style.display='none'" style="margin-top:20px; border:none; background:none; color:#aaa; text-decoration:underline;">إغلاق</button>
-        </div>
-    </div>
-
     <div class="container">
         <img src="logo.png" class="logo-top" onerror="this.style.display='none'">
+        
         <h1>بالونات العيد العملاقة 🎈</h1>
         <div class="brand-story">نسجنا لكم من خيوط الذهب حروفاً تُعلن الفرح وتزين لقاءات العيد.</div>
 
-        <div class="instruction-box">
-            <span>💡 بعد الضغط، اختر أيقونة المكعب 🧊 لتشغيل الكاميرا</span>
-        </div>
-
-        <button id="ar-btn" class="btn">🤳 فتح المعاينة في منزلك</button>
+        <a href="https://www.tiktok.com/@helium.aleid0" target="_blank" class="btn">🎵 تابعنا على تيك توك</a>
 
         <a href="https://crlkll.zid.store/" class="btn secondary-btn">🛒 اطلب من المتجر</a>
-        <a href="https://wa.me/966577493584" class="btn secondary-btn">💬 الدعم الفني</a>
+        <a href="https://wa.me/966577493584" target="_blank" class="btn secondary-btn">💬 تواصل معنا على الواتس للاستفسارات والتصاميم الخاصة</a>
     </div>
 
-    <script>
-        function isSocial() {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            return (ua.indexOf("TikTok") > -1) || (ua.indexOf("Instagram") > -1);
-        }
-
-        document.getElementById('ar-btn').addEventListener('click', function() {
-            if (isSocial()) {
-                document.getElementById('tiktok-helper').style.display = 'flex';
-            } else {
-                // حل كسر الكاش النهائي: إضافة رقم فريد جداً للرابط
-                const uniqueVersion = new Date().getTime(); 
-                const link = document.createElement('a');
-                link.setAttribute('rel', 'ar');
-                // الرابط سيصبح مثلاً: HeliumEid.usdz?update=17123456789
-                link.setAttribute('href', 'HeliumEid.usdz?update=' + uniqueVersion);
-                
-                const img = document.createElement('img');
-                img.src = 'logo.png';
-                link.appendChild(img);
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-        });
-
-        // إذا كان المستخدم داخل تيك توك، نظهر التنبيه فوراً عند التحميل
-        window.onload = function() {
-            if (isSocial()) {
-                document.getElementById('tiktok-helper').style.display = 'flex';
-            }
-        };
-    </script>
 </body>
 </html>
