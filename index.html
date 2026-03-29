@@ -8,6 +8,9 @@
     <meta http-equiv="Expires" content="0">
     
     <title>هيليوم العيد | Helium Eid</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         body { 
             display: flex; flex-direction: column; align-items: center; justify-content: center; 
@@ -19,7 +22,7 @@
         
         /* تكبير الشعار */
         .logo-top { 
-            width: 180px; /* حجم كبير ومناسب لشاشات الجوال */
+            width: 180px; 
             max-width: 100%;
             height: auto;
             margin-bottom: 25px; 
@@ -34,7 +37,7 @@
             color: #ffffff; 
             text-decoration: none;
             padding: 16px 20px; margin: 0 auto 12px; border-radius: 40px; 
-            font-weight: 600; font-size: 16px; width: 85%; border: none; cursor: pointer; gap: 8px;
+            font-weight: 600; font-size: 16px; width: 85%; border: none; cursor: pointer; gap: 10px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-sizing: border-box;
             line-height: 1.4;
@@ -45,6 +48,7 @@
             box-shadow: 0 2px 4px rgba(226, 169, 182, 0.2);
         }
         
+        /* ألوان الأزرار */
         .store-btn { 
             background: #B6D6C8; 
             color: #1d1d1f; 
@@ -58,6 +62,30 @@
             box-shadow: 0 4px 6px rgba(198, 180, 214, 0.2);
         }
         .whatsapp-btn:hover { box-shadow: 0 2px 4px rgba(198, 180, 214, 0.2); }
+
+        .insta-btn { 
+            background: #E0C3A6; 
+            color: #1d1d1f; 
+            box-shadow: 0 4px 6px rgba(224, 195, 166, 0.2);
+        }
+        .insta-btn:hover { box-shadow: 0 2px 4px rgba(224, 195, 166, 0.2); }
+
+        .yt-btn { 
+            background: #E6A8A8; 
+            color: #1d1d1f; 
+            box-shadow: 0 4px 6px rgba(230, 168, 168, 0.2);
+        }
+        .yt-btn:hover { box-shadow: 0 2px 4px rgba(230, 168, 168, 0.2); }
+
+        .email-btn { 
+            background: #A8C4E6; 
+            color: #1d1d1f; 
+            box-shadow: 0 4px 6px rgba(168, 196, 230, 0.2);
+        }
+        .email-btn:hover { box-shadow: 0 2px 4px rgba(168, 196, 230, 0.2); }
+
+        /* تكبير الأيقونات شوي عشان توضح */
+        .btn i { font-size: 20px; }
     </style>
 </head>
 <body>
@@ -71,9 +99,29 @@
             خدمة توصيل سريعة ومتقنة في الأحساء.
         </div>
 
-        <a href="https://www.tiktok.com/@helium.aleid0" target="_blank" class="btn">🎵 تابعنا على تيك توك</a>
-        <a href="https://crlkll.zid.store/" target="_blank" class="btn store-btn">🛒 اطلب من المتجر</a>
-        <a href="https://wa.me/966577493584" target="_blank" class="btn whatsapp-btn">💬 تواصل معنا على الواتس للاستفسارات والتصاميم الخاصة</a>
+        <a href="https://crlkll.zid.store/" target="_blank" class="btn store-btn">
+            <i class="fa-solid fa-cart-shopping"></i> اطلب من المتجر
+        </a>
+        
+        <a href="https://wa.me/966577493584" target="_blank" class="btn whatsapp-btn">
+            <i class="fa-brands fa-whatsapp"></i> تواصل معنا على الواتس
+        </a>
+
+        <a href="https://instagram.com/HELIUM.ALEIDO" target="_blank" class="btn insta-btn">
+            <i class="fa-brands fa-instagram"></i> تابعنا على انستقرام
+        </a>
+
+        <a href="https://www.tiktok.com/@helium.aleid0" target="_blank" class="btn">
+            <i class="fa-brands fa-tiktok"></i> تابعنا على تيك توك
+        </a>
+        
+        <a href="https://www.youtube.com/@helium.aleid0" target="_blank" class="btn yt-btn">
+            <i class="fa-brands fa-youtube"></i> قناتنا على يوتيوب
+        </a>
+        
+        <a href="mailto:heliumeid@gmail.com" class="btn email-btn">
+            <i class="fa-solid fa-envelope"></i> تواصل معنا عبر الإيميل
+        </a>
     </div>
 
 </body>
